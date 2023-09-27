@@ -1,8 +1,10 @@
 import { NestFactory } from '@nestjs/core';
-import { AuthModule } from './auth.module';
-import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { ConfigService } from '@nestjs/config';
 import { Transport } from '@nestjs/microservices';
+import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import { AuthModule } from './auth.module';
+//TODO: Replace with package
+import {AnyToHttpExceptionFilter} from '../../../libraries/beyapsi.backend.common/dist';
 
 async function bootstrap() {
   const app = await NestFactory.create(AuthModule, { cors: true });
@@ -25,6 +27,10 @@ async function bootstrap() {
       port: configService.get('auth.rpcPort')
     }
   });
+
+  app.useGlobalFilters(new AnyToHttpExceptionFilter());
+  await app.startAllMicroservices();
+  await app.listen(configService.get('auth.httpPort'));
 }
 
 bootstrap();
