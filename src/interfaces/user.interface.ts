@@ -32,13 +32,10 @@ export interface User {
   rfc: string //Revisado
   curp: string //Revisado
   voter_key: string //Revisado
-  taxpayer_identification_number: string
-  official_identification_number: string
-  personal_message: string
-  gender_id: number
-  gender_name: string
-  economic_activity_id: number
-  economic_activity_name: string
+  id_gender: number //Revisado
+  gender_name: string // Campo relacion
+  id_economic_activity: number //Revisado
+  economic_activity_name: string //Campo relacionado
   public_position_id: number
   public_position_name: string
   marital_status_id: number
