@@ -36,50 +36,40 @@ export interface User {
   gender_name: string // Campo relacion
   id_economic_activity: number //Revisado
   economic_activity_name: string //Campo relacionado
-  public_position_id: number
-  public_position_name: string
-  marital_status_id: number
-  marital_status_name: string
-  marital_regime_id: number
-  marital_regime_name: string
-  occupation_id: number
-  occupation_name: string
-  education_level_id: number
-  education_level_name: string
-  professional_title_id: number
-  professional_title_name: string
-  birthdate: string
-  establishment_date: string
-  last_access_date: string
-  registration_date: string
-  modification_date: string
-  discharge_date: string
-  picture: string
-  account_number: string
-  active_payroll_module: boolean
-  active_stamp_payroll_module: boolean
-  active_api_keys: boolean
-  permission_to_operate: boolean
-  blacklist_verified: boolean
-  compliance_officer_reviewed: boolean
-  transactional_profile_completed: boolean
-  personal_information_completed: boolean
-  general_information_completed: boolean
-  home_address_registered: boolean
-  foreign_address_registered: boolean
-  digital_documentation_level_2_completed: boolean
-  digital_documentation_level_3_completed: boolean
-  beneficiaries_registered: boolean
-  internal_control_review: boolean
-  signed_contract: boolean
-  terms_conditions_accepted: boolean
-  privacy_policy_accepted: boolean
-  registration_sequence_control: number
-  email: string
-  alternate_email: string
-  politically_exposed_person: boolean
-  stp_verified: boolean
-  has_secret_question: boolean
-  has_transactional_nip: boolean
-  user_level: number
+  id_marital_status: number //Revisado
+  marital_status_name: string //Campo relacionado
+  id_national_ocupation: number //Revisado
+  occupation_name: string //Campor relacionado
+  education_level_id: number //id_study_level
+  education_level_name: string //Campo relacionado
+  id_professional_title: number //Revisado
+  professional_title_name: string //Campo relacionado
+  birthdate: Date //Revisado
+  constitution_date: Date //Revisado
+  last_access_date: Date //Revisado
+  created_date: Date //Revisado
+  updated_date: Date //Revisado
+  deleted_date: Date //Revisado
+  operating_permit_flag: boolean //Revisado
+  black_list_flag: boolean //Revisado
+  compliance_officer_reviewed: boolean //Revisado
+  transactional_profile_flag: boolean //Revisado
+  personal_information_flag: boolean //Revisado
+  general_info_flag: boolean //Revisado
+  local_address_flag: boolean //Revisado
+  correspondance_address_flag: boolean //Revisado
+  digital_level_2_info_flag: boolean //Revisado
+  digital_level_3_info_flag: boolean //Revisado
+  beneficiaries_registered_flag: boolean //Revisado
+  intern_control_validated_flag: boolean //Revisado
+  signed_contract_flag: boolean //Revisado
+  terms_conditions_flag: boolean //Revisado
+  privacy_notice_flag: boolean //Revisado
+  previous_level_validation_flag: number //Revisado
+  email_flag: string //Revisado
+  alt_email_flag: string //Revisado
+  politically_exposed_person_flag: boolean //Revisado
+  stp_verified: boolean //Revisado
+  has_secret_question: boolean //Revisado
+  has_transactional_nip: boolean //Revisado
 }
