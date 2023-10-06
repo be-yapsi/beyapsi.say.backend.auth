@@ -1,29 +1,22 @@
 export interface User {
-  id: string //Revisado
+  id: number //Revisado
   id_user_type: number //Revisado
-  user_type_name: string //Campo relacionado
   id_user_status: number //Revisado
-  user_status_name: string //Campo relacionado
   id_legal_person: number //Revisado
-  legal_personality_name: string //Campo relacionado
+  id_matrimonial_regime: number
   id_country: number //Revisado
-  country_name: string //Campo relacionado
   id_state: number //Revisado
-  state_name: string //Campo relacionado
+  id_user_level: number
   id_municipality: number //Revisado
-  municipality_name: string //Campo relacionado
   id_city: number //Revisado
-  city_name: string //Campo relacionado
   id_country_birth: number //Revisado
-  birth_country_name: string //Campo relacionado
+  id_state_birth: number
+  id_municipality_birth:number
   id_city_birth: number //Revisado
-  city_birth_name: string //Campo relacionado
   id_origin: number //Revisado
-  origin_name: string //Campo relacionado
   id_nationality: number //Revisado
-  nationality_name: string //Campo relcionado
+  id_languaje:number
   id_profession: number //Revisado
-  profession_name: string //Campo relacionado
   company_name: string //Revisado
   first_name: string //Revisado
   second_name: string //Revisado
@@ -33,17 +26,17 @@ export interface User {
   curp: string //Revisado
   voter_key: string //Revisado
   id_gender: number //Revisado
-  gender_name: string // Campo relacion
+  // gender_name: string // Campo relacion
   id_economic_activity: number //Revisado
-  economic_activity_name: string //Campo relacionado
+  // economic_activity_name: string //Campo relacionado
   id_marital_status: number //Revisado
-  marital_status_name: string //Campo relacionado
+  // marital_status_name: string //Campo relacionado
   id_national_ocupation: number //Revisado
-  occupation_name: string //Campor relacionado
+  // occupation_name: string //Campor relacionado
   education_level_id: number //id_study_level
-  education_level_name: string //Campo relacionado
+  // education_level_name: string //Campo relacionado
   id_professional_title: number //Revisado
-  professional_title_name: string //Campo relacionado
+  // professional_title_name: string //Campo relacionado
   birthdate: Date //Revisado
   constitution_date: Date //Revisado
   last_access_date: Date //Revisado
