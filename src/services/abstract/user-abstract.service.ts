@@ -1,16 +1,16 @@
 import { Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
-import { Users } from 'C:/Projects/BeYapsi/libraries/beyapsi.yapsi.backend.sqlserver/dist'
+import { Usuarios } from 'C:/Projects/BeYapsi/libraries/beyapsi.yapsi.backend.sqlserver/dist'
 import { Repository } from "typeorm";
 
 @Injectable()
 export class UserAbstractService {
   constructor(
-    @InjectRepository(Users)
-    private readonly userRepository: Repository<Users>
+    @InjectRepository(Usuarios)
+    private readonly userRepository: Repository<Usuarios>
   ){}
 
-  async findAll(): Promise<Users[]> {
+  async findAll(): Promise<Usuarios[]> {
     return this.userRepository.find();
   }
 }

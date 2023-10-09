@@ -6,7 +6,7 @@ import { ormconfig } from "./ormconfig";
 import { UserAbstractService } from "./services/abstract/user-abstract.service";
 import { AuthController } from "./controllers/auth.controller";
 import { UserService } from "./services/user.service";
-import { Users } from 'C:/Projects/BeYapsi/libraries/beyapsi.yapsi.backend.sqlserver/dist';
+import { Usuarios } from 'C:/Projects/BeYapsi/libraries/beyapsi.yapsi.backend.sqlserver/dist';
 
 @Module({
   imports: [
@@ -16,7 +16,7 @@ import { Users } from 'C:/Projects/BeYapsi/libraries/beyapsi.yapsi.backend.sqlse
       envFilePath:'./.env'
     }),
     TypeOrmModule.forRoot(ormconfig),
-    TypeOrmModule.forFeature([Users])
+    TypeOrmModule.forFeature([Usuarios])
   ],
   controllers: [AuthController],
   providers:

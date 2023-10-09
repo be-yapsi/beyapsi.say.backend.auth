@@ -33,12 +33,12 @@ export interface User {
   id_national_ocupation: number //Revisado
   id_education_level: number //id_study_level
   id_professional_title: number //Revisado
-  birthdate: Timestamp //Revisado
-  constitution_date: Timestamp //Revisado
-  last_access_date: Timestamp //Revisado
-  created_date: Timestamp //Revisado
-  updated_date: Timestamp //Revisado
-  deleted_date: Timestamp //Revisado
+  birthdate: Date //Revisado
+  constitution_date: Date //Revisado
+  last_access_date: Date //Revisado
+  created_date: Date //Revisado
+  updated_date: Date //Revisado
+  deleted_date: Date //Revisado
   id_created_by: number //Revisado
   id_updated_by: number //Revisado
   id_deleted_by: number //Revisado
@@ -54,8 +54,8 @@ export interface User {
   taxpayer_identification_number: string
   stp_CLABE: string
   email: string
-  password: string
-  nip: string
+  password: Buffer
+  nip: Buffer
   wrong_attempt_counter: number
   wrong_security_question_counter:number
   total_PLD_risk_points:number
@@ -77,10 +77,13 @@ export interface User {
   key: string
   id_employee_validated_documentation: number
   official_identification_number: string
-  biometric_key: string
+  biometric_key: Buffer
   validated_rfc: boolean
   validated_curp: boolean
   in_blacklist: boolean
+  exp_arm_aml: boolean,
+  cnt_sqn_registro: number
+  internal_verified_date: Date
   operating_permit_flag: boolean //Revisado
   black_list_flag: boolean //Revisado
   compliance_officer_reviewed: boolean //Revisado
@@ -96,7 +99,7 @@ export interface User {
   signed_contract_flag: boolean //Revisado
   terms_conditions_flag: boolean //Revisado
   privacy_notice_flag: boolean //Revisado
-  previous_level_validation_flag: number //Revisado
+  previous_level_validation_flag: boolean //Revisado
   email_flag: string //Revisado
   alt_email_flag: string //Revisado
   politically_exposed_person_flag: boolean //Revisado
