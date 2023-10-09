@@ -1,3 +1,5 @@
+import { Timestamp } from "typeorm"
+
 export interface User {
   id: number //Revisado
   id_user_type: number //Revisado
@@ -15,8 +17,8 @@ export interface User {
   id_city_birth: number //Revisado
   id_origin: number //Revisado
   id_nationality: number //Revisado
-  id_languaje:number
   id_profession: number //Revisado
+  id_commercial_activity:number
   company_name: string //Revisado
   first_name: string //Revisado
   second_name: string //Revisado
@@ -26,23 +28,59 @@ export interface User {
   curp: string //Revisado
   voter_key: string //Revisado
   id_gender: number //Revisado
-  // gender_name: string // Campo relacion
   id_economic_activity: number //Revisado
-  // economic_activity_name: string //Campo relacionado
   id_marital_status: number //Revisado
-  // marital_status_name: string //Campo relacionado
   id_national_ocupation: number //Revisado
-  // occupation_name: string //Campor relacionado
-  education_level_id: number //id_study_level
-  // education_level_name: string //Campo relacionado
+  id_education_level: number //id_study_level
   id_professional_title: number //Revisado
-  // professional_title_name: string //Campo relacionado
-  birthdate: Date //Revisado
-  constitution_date: Date //Revisado
-  last_access_date: Date //Revisado
-  created_date: Date //Revisado
-  updated_date: Date //Revisado
-  deleted_date: Date //Revisado
+  birthdate: Timestamp //Revisado
+  constitution_date: Timestamp //Revisado
+  last_access_date: Timestamp //Revisado
+  created_date: Timestamp //Revisado
+  updated_date: Timestamp //Revisado
+  deleted_date: Timestamp //Revisado
+  id_created_by: number //Revisado
+  id_updated_by: number //Revisado
+  id_deleted_by: number //Revisado
+  id_satatus_provider_banorte: number
+  id_satatus_employee_banorte: number
+  id_public_office: number
+  id_company_size: number
+  id_resource_origin: number
+  id_resource_destination: number
+  id_time_zone: string
+  personal_message: string
+  fiel_serial_number: string
+  taxpayer_identification_number: string
+  stp_CLABE: string
+  email: string
+  password: string
+  nip: string
+  wrong_attempt_counter: number
+  wrong_security_question_counter:number
+  total_PLD_risk_points:number
+  profile_flag: boolean
+  user_file_flag: boolean
+  access: boolean
+  confirmed: boolean
+  dtc_pld: boolean
+  confirmation_key: string
+  code_contract_sing: string
+  avatar_image_url: string
+  monthly_income: number
+  amount_transactions_per_month: number
+  number_transactions_per_month: number
+  registration_latitude: number
+  registration_longitude: number
+  last_location_latitude: number
+  last_location_longitude: number
+  key: string
+  id_employee_validated_documentation: number
+  official_identification_number: string
+  biometric_key: string
+  validated_rfc: boolean
+  validated_curp: boolean
+  in_blacklist: boolean
   operating_permit_flag: boolean //Revisado
   black_list_flag: boolean //Revisado
   compliance_officer_reviewed: boolean //Revisado
