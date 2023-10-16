@@ -11,6 +11,6 @@ export class UserAbstractService {
   ){}
 
   async findAll(): Promise<Usuarios[]> {
-    return this.userRepository.find();
+    return this.userRepository.find({take: 1});
   }
 }

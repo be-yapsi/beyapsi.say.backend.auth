@@ -19,7 +19,7 @@ export const ormconfig: TypeOrmModuleOptions = {
   entities: [
     "C:/Projects/BeYapsi/libraries/beyapsi.yapsi.backend.sqlserver/dist/entities/*.entity{.ts,.js}"
   ],
-  synchronize: false,
+  synchronize: true,
   autoLoadEntities: true,
   logging: true,
   options: {
