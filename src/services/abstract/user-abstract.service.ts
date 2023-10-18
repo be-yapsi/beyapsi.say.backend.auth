@@ -11,6 +11,9 @@ export class UserAbstractService {
   ){}
 
   async findAll(): Promise<Usuarios[]> {
-    return this.userRepository.find({take: 1});
+    var user = new Array<Usuarios>;
+    user = await this.userRepository.find({take: 1});
+
+    return user;
   }
 }
