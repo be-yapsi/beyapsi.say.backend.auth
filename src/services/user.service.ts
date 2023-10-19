@@ -11,15 +11,15 @@ export class UserService {
   async findAll() {
     const userAbstract = await this.userAbstractService.findAll();
 
-      const userDto = userAbstract.map<User>(user => ({
+    const userDto = await Promise.all(userAbstract.map<Promise<User>>(async user => ({
       id: user.codigo,
-      id_user_type: user.cdgTpoUsuario,
-      id_user_status: user.cdgEstUsuario,
-      id_user_level: user.cdgNvlUsuario,
-      id_legal_person: user.cdgPrsJuridica,
+      id_user_type: await user.cdgTpoUsuario,
+      id_user_status: await user.cdgEstUsuario,
+      id_user_level: await user.cdgNvlUsuario,
+      id_legal_person: await user.cdgPrsJuridica,
       id_marital_status: user.cdgEstCivil,
-      id_matrimonial_regime: user.cdgRgmMatrimonial,
-      id_country: user.cdgPais,
+      id_matrimonial_regime: await user.cdgRgmMatrimonial,
+      id_country: await user.cdgPais,
       id_state: user.cdgEstado,
       id_municipality: user.cdgMunicipio,
       id_city: user.cdgCiudad,
@@ -27,24 +27,24 @@ export class UserService {
       id_state_birth: user.cdgEstNacimiento,
       id_municipality_birth: user.cdgMncNacimiento,
       id_city_birth: user.cdgCddNacimiento,
-      id_origin: user.cdgOrigen,
-      id_nationality: user.cdgNacionalidad,
+      id_origin: await user.cdgOrigen,
+      id_nationality: await user.cdgNacionalidad,
       id_language: user.cdgIdioma,
       id_profession: user.cdgProfesion,
-      id_commercial_activity: user.cdgGiro,
-      id_national_ocupation: user.cdgCdgNcnOcupacion,
-      id_education_level: user.cdgEscolaridad,
-      id_professional_title: user.cdgTtlProfesional,
-      id_gender: user.cdgSexo,
+      id_commercial_activity: await user.cdgGiro,
+      id_national_ocupation: await user.cdgCdgNcnOcupacion,
+      id_education_level: await user.cdgEscolaridad,
+      id_professional_title: await user.cdgTtlProfesional,
+      id_gender: await user.cdgSexo,
       id_created_by: user.cdgEmpAlta,
       id_updated_by: user.cdgEmpModificacion,
       id_deleted_by: user.cdgEmpBaja,
-      id_satatus_provider_banorte: user.cdgEstPrvBanorte,
-      id_satatus_employee_banorte: user.cdgEstEmpBanorte,
-      id_public_office: user.cdgCrgPublico,
-      id_company_size: user.cdgTmnEmpresa,
-      id_resource_origin: user.cdgOrgRecurso,
-      id_resource_destination: user.cdgDstRecurso,
+      id_satatus_provider_banorte: await user.cdgEstPrvBanorte,
+      id_satatus_employee_banorte: await user.cdgEstEmpBanorte,
+      id_public_office: await user.cdgCrgPublico,
+      id_company_size: await user.cdgTmnEmpresa,
+      id_resource_origin: await user.cdgOrgRecurso,
+      id_resource_destination: await user.cdgDstRecurso,
       id_time_zone: user.idnZnaHoraria,
       personal_message: user.mnsPersonal,
       company_name: user.rznSocial,
@@ -118,7 +118,7 @@ export class UserService {
       key: user.llave,
       personal_information_flag: user.infPrsCompleta,
       previous_level_validation_flag: user.cntVldNvlAntMntOperar
-    }));
+    })));
 
     return userDto;
   }

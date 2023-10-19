@@ -21,7 +21,6 @@ export const ormconfig: TypeOrmModuleOptions = {
   ],
   synchronize: true,
   autoLoadEntities: true,
-  logging: true,
   options: {
     trustServerCertificate: true,
   }

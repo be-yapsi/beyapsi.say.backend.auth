@@ -1,5 +1,3 @@
-import { Timestamp } from "typeorm"
-
 export interface User {
   id: number //Revisado
   id_user_type: any //Revisado
