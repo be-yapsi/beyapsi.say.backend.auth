@@ -1,4 +1,4 @@
-import { Controller, Get } from "@nestjs/common";
+import { Controller, Post } from "@nestjs/common";
 import { ApiTags } from "@nestjs/swagger";
 import { UserService } from "../services/user.service";
 
@@ -7,7 +7,7 @@ export class AuthController {
   constructor(
     private readonly userService: UserService) {}
 
-  @Get('login')
+  @Post('login')
   async login() {
     return this.userService.findAll();
   }
