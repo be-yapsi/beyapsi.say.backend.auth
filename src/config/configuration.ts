@@ -4,6 +4,10 @@ export const config = () => ({
       httpPort: parseInt(process.env.AUTH_HTTP_PORT),
       rpcPort: parseInt(process.env.AUTH_RPC_PORT)
   },
+  users: {
+    host: process.env.USERS_HOST || 'localhost',
+    rpcPort: parseInt(process.env.USERS_RPC_PORT)
+  },
   database: {
     username: process.env.DB_USER,
     password: process.env.DB_PASSWORD,

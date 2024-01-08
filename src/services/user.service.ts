@@ -8,7 +8,7 @@ export class UserService {
     private readonly userAbstractService: UserAbstractService
   ){}
 
-  async findAll() {
+  async findAll(loginDto: any) {
     const userAbstract = await this.userAbstractService.findAll();
 
     const userDto = await Promise.all(userAbstract.map<Promise<User>>(async user => ({

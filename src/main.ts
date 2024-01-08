@@ -9,9 +9,8 @@ import {AnyToHttpExceptionFilter} from '../../../libraries/beyapsi.backend.commo
 async function bootstrap() {
   const app = await NestFactory.create(AuthModule, { cors: true });
   const options = new DocumentBuilder()
-    .setTitle('API SAY')
-    .addTag('Auth')
-    .addBearerAuth()
+    .setTitle('Security SAY API')
+    .setVersion('0.0.1')
     .build();
   
   const document = SwaggerModule.createDocument(app, options);
@@ -31,6 +30,7 @@ async function bootstrap() {
   app.useGlobalFilters(new AnyToHttpExceptionFilter());
   await app.startAllMicroservices();
   await app.listen(configService.get('auth.httpPort'));
+  
 }
 
 bootstrap();

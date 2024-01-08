@@ -10,18 +10,18 @@ export class UserLocalStrategy extends PassportStrategy(Strategy, 'user-strategy
     super();
   }
 
-  async validate(username: string, password: string): Promise<any> {
-    const user = await this.authService.validateUser(username, password, Platform.UserWeb);
+  async validate(username: string, password: string, platform: string): Promise<any> {
+    const user = await this.authService.validateUser(username, password, platform);
 
     if (!user) {
       throw new UnauthorizedException('Credentials are not valid');
     }
 
-    if (user.status_id !== Status.) {
+    if (user.id_user_status !== Status.Active) {
       throw new HttpException({message: 'User is blocked.', statusCode: 441}, 441);
     }
 
-    if (!user.confirmed_email) {
+    if (!user.email_flag) {
       throw new HttpException({message: 'Email address is not verified.', statusCode: 442}, 442);
     }
 
